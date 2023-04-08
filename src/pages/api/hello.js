@@ -7,11 +7,11 @@ export default function handler(req, res) {
     url: 'https://api.openai.com/v1/chat/completions',
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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",
+      "Authorization": process.env.OPENAI_API_KEY,
     },
     data: {
       "model": "gpt-3.5-turbo",
-      "messages": [{"role": "user", "content": "Hello!"}]
+      "messages": [{"role": "user", "content": "Hello! My name is Stephen"}]
     }
   })
   .then((response) => {
