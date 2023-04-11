@@ -11,7 +11,7 @@ export default function handler(req, res) {
     },
     data: {
       "model": "gpt-3.5-turbo",
-      "messages": [{"role": "user", "content": "Hello! My name is Stephen"}]
+      "messages": [{"role": "user", "content": "Hello!"}]
     }
   })
   .then((response) => {
