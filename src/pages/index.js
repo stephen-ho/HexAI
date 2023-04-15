@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+// import styles from '@/styles/Home.module.css'
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -33,11 +33,11 @@ export default function Home() {
   }
 
   const colorWheel = colors.map((color, index) => {
+    const identifier = `dot${index}`
     return (
-      // <h2 key={index} style={{ color: color.color }}>{color.color} - {color.description}</h2>
-      <div key={index} class={index}>
+      <div key={index} className={identifier}>
         <span
-          class="dot"
+          className="dot"
           style={{ background: color.color }}
           onMouseEnter={() => setCurrentColor(color)}
         />
@@ -76,8 +76,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1>HexAI</h1>
+      <main className="main">
+        {/* <h1>HexAI</h1> */}
         {loading}
         <div className="input">
           <input
@@ -87,12 +87,14 @@ export default function Home() {
           />
           <button onClick={handleClick}>Generate Colors</button>
         </div>
-        <div className="colorWheel">
-          {colorWheel}
-        </div>
-        <div className="colorInfo">
-          <h2>{currentColor.color}</h2>
-          {currentColor.description}
+        <div className="colors">
+          <div className="colorWheel">
+            {colorWheel}
+          </div>
+          <div className="colorInfo">
+            <h2>{currentColor.color}</h2>
+            {currentColor.description}
+          </div>
         </div>
       </main>
     </>
