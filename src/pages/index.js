@@ -77,7 +77,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
-        {/* <h1>HexAI</h1> */}
+        <h1>HexAI</h1>
         {loading}
         <div className="input">
           <input
