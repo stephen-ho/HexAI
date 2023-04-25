@@ -11,6 +11,11 @@ a {
   padding: 5px;
 }
 
+.link {
+  text-align: center;
+  width: max-content;
+}
+
 .main {
   display: flex;
   flex-direction: column;

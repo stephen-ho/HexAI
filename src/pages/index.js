@@ -145,7 +145,7 @@ export default function Home() {
           </div>
         </div>
         {extras}
-        <a href="https://stephen-ho.github.io/">HexAI by Stephen Ho</a>
+        <a href="https://stephen-ho.github.io/" className="link">HexAI by Stephen Ho</a>
       </main>
     </>
   )
