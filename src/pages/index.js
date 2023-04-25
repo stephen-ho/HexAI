@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 // import styles from '@/styles/Home.module.css'
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Button, Tooltip, TextField } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -101,6 +102,19 @@ export default function Home() {
 
   const loading = isLoading ? <div>{loader}</div> : null;
 
+  const extras = (colors.length > 1) ?
+    <div className="extras">
+      <Tooltip title="Generate the same colors but one shade darker" placement="top">
+        <Button variant="contained" size="large" onClick={handleDarker}>Darker</Button>
+      </Tooltip>
+      <Tooltip title="Generate the same colors but one shade lighter" placement="top">
+        <Button variant="contained" size="large" onClick={handleLighter}>Lighter</Button>
+      </Tooltip>
+    </div>
+    : null;
+
+  const fontColor = `color: ${currentColor.color}`;
+
   return (
     <>
       <Head>
@@ -110,29 +124,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
-        <h1>HexAI</h1>
         {loading}
         <div className="input">
-          <input
+          <TextField
+            className="promptInput"
+            variant="outlined"
             value={userDescription}
             onChange={handleChange}
-            placeholder="Give me 7 hex colors that represent..."
+            label="Give me 7 hex colors that represent..."
           />
-          <button onClick={handleClick}>Generate Colors</button>
-        </div>
-        <div className="extras">
-          <button onClick={handleDarker}>Darker</button>
-          <button onClick={handleLighter}>Lighter</button>
+          <Button className="button" variant="contained" size="large" onClick={handleClick}>Generate Colors</Button>
         </div>
         <div className="colors">
           <div className="colorWheel">
             {colorWheel}
           </div>
           <div className="colorInfo">
-            <h2>{currentColor.color}</h2>
-            {currentColor.description}
+            <h2 style={{color: currentColor.color}}>{currentColor.color}</h2>
+            <b>{currentColor.description}</b>
           </div>
         </div>
+        {extras}
+        <a href="https://stephen-ho.github.io/">Created by Stephen Ho</a>
       </main>
     </>
   )
