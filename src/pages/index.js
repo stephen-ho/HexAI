@@ -32,6 +32,35 @@ export default function Home() {
     });
   }
 
+  function handleDarker() {
+    // console.log(colorsArr.toString());
+    setIsLoading(true);
+    axios.post('/api/darker', {
+      colors: colorsArr.toString()
+    })
+    .then((response) => {
+      setColors(response.data);
+      setIsLoading(false);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+  function handleLighter() {
+    setIsLoading(true);
+    axios.post('/api/lighter', {
+      colors: colorsArr.toString()
+    })
+    .then((response) => {
+      setColors(response.data);
+      setIsLoading(false);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
   const colorWheel = colors.map((color, index) => {
     const identifier = `dot${index}`
     return (
@@ -44,6 +73,10 @@ export default function Home() {
       </div>
     );
   });
+
+  const colorsArr = colors.map((color) => {
+    return color.color;
+  })
 
   const loader =
     <div class="loader">
@@ -86,6 +119,10 @@ export default function Home() {
             placeholder="Give me 7 hex colors that represent..."
           />
           <button onClick={handleClick}>Generate Colors</button>
+        </div>
+        <div className="extras">
+          <button onClick={handleDarker}>Darker</button>
+          <button onClick={handleLighter}>Lighter</button>
         </div>
         <div className="colors">
           <div className="colorWheel">
