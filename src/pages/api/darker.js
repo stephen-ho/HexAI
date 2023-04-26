@@ -13,7 +13,7 @@ export default function handler(req, res) {
     url: 'https://api.openai.com/v1/chat/completions',
     headers: {
       "Content-Type": "application/json",
-      "Authorization": process.env.OPENAI_API_KEY,
+      "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
     },
     data: {
       "model": "gpt-3.5-turbo",
