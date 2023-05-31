@@ -4,7 +4,8 @@
 
 Project Description
 ----------------
-This application is a simple and intuitive web app that helps users find the perfect color scheme by simply describing the theme. Built utilizing AI Prompt Engineering and the OpenAI API.
+This web app utilizes AI to help users find the perfect color scheme by using natural language descriptions.
+Built utilizing AI Prompt Engineering and the OpenAI API.
 
 
 Dependencies
@@ -17,12 +18,11 @@ Dependencies
 Instructions to set up repository
 ----------------
 
-1.  Fork and clone this repository locally
+1. Fork and clone this repository locally
 2. Navigate to the local repository folder
-3.  Install dependencies (npm install)
+3. Install dependencies (npm install)
 3. Launch dev environment (npm run dev)
 4. Navigate to http://localhost:3000/ 
-
 
 
 ## Author
