@@ -10,6 +10,7 @@ h1 {
 
 h3 {
   padding: 20px 40px;
+  margin: 0;
   border-top: 1px solid #B2B2B2;
   border-bottom: 1px solid #B2B2B2;
 }
@@ -45,7 +46,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 3rem;
-  min-height: 100vh;
+  max-height: 100vh;
 }
 
 .input {
@@ -54,6 +55,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 .promptInput {
@@ -88,6 +90,7 @@ a {
   justify-content: center;
   align-items: center;
   overflow: auto;
+  margin: 10px;
 }
 
 .colorWheel {
@@ -114,6 +117,7 @@ a {
 .extras {
   display: flex;
   flex-direction: row;
+  margin: 10px;
 }
 
 .extras button {
@@ -123,9 +127,13 @@ a {
 
 @media screen and (max-width: 600px) {
 
+  h1 {
+    margin: 20px;
+  }
+
   h3 {
     text-align: center;
-    margin: 10%;
+    margin: 0 10%;
   }
 
   .input {
@@ -282,7 +290,7 @@ a {
   0%, 15% {
   transform: rotate(0);
 }
-100% {
-  transform: rotate(360deg);
-}
+  100% {
+    transform: rotate(360deg);
+  }
 }

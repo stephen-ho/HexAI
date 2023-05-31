@@ -1,7 +1,7 @@
-import '@/styles/globals.css'
 import { Roboto } from 'next/font/google'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import '@/styles/globals.css'
 
 const roboto = Roboto({
   weight: '400',
