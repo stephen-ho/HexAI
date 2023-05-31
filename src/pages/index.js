@@ -9,10 +9,22 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [ colors, setColors ] = useState([]);
+  const defaultColors = [
+    {"color": "#F3B289", "description": "A peachy-orange color that might remind you of the color of a beach sunset."},
+    {"color": "#FF7F50", "description": "A vibrant coral with a reddish-orange hue."},
+    {"color": "#FFC0CB", "description": "A soft pinkish-orange coral color that is often found on the Great Barrier Reef."},
+    {"color": "#FFD700", "description": "A bright yellow color that can be found in certain coral species."},
+    {"color": "#FFA07A", "description": "A salmon pink coral color that is seen in many reef formations."},
+    {"color": "#FA8072", "description": "A coral with a deep orange-red hue that is often found in deeper waters on the Great Barrier Reef."},
+    {"color": "#FFCFAF", "description": "A light peach coral color that is commonly found on the Great Barrier Reef."}
+  ];
+
+  const defaultCurrentColor = {"color": "#F3B289", "description": "A peachy-orange color that might remind you of the color of a beach sunset."};
+
+  const [ colors, setColors ] = useState(defaultColors);
   const [ isLoading, setIsLoading ] = useState(false);
-  const [ userDescription, setDescription ] = useState("");
-  const [ currentColor, setCurrentColor ] = useState("");
+  const [ userDescription, setDescription ] = useState("corals of the Great Barrier Reef");
+  const [ currentColor, setCurrentColor ] = useState(defaultCurrentColor);
 
   function handleChange(e) {
     setDescription(e.target.value);
@@ -78,22 +90,22 @@ export default function Home() {
   })
 
   const loader =
-    <div class="loader">
-      <div class="loader-inner">
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
+    <div className="loader">
+      <div className="loader-inner">
+        <div className="loader-line-wrap">
+          <div className="loader-line"></div>
         </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
+        <div className="loader-line-wrap">
+          <div className="loader-line"></div>
         </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
+        <div className="loader-line-wrap">
+          <div className="loader-line"></div>
         </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
+        <div className="loader-line-wrap">
+          <div className="loader-line"></div>
         </div>
-        <div class="loader-line-wrap">
-          <div class="loader-line"></div>
+        <div className="loader-line-wrap">
+          <div className="loader-line"></div>
         </div>
       </div>
     </div>
@@ -121,6 +133,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="hero">
+        <h1>HexAI</h1>
+        <h3>Allow me to assist you in finding the perfect color scheme!</h3>
+      </div>
       <main className="main">
         {loading}
         <div className="input">
