@@ -3,7 +3,7 @@ import axios from "axios";
 export default function handler(req, res) {
   const userInput = req.body.userDescription;
 
-  const prompt = `Give me 7 hex colors that represent ${userInput} in a json format that looks like this object [{"color": "#F3B289", "description": "A peachy-orange color that might remind you of the color of a beach sunset."}]`;
+  const prompt = `Give me 7 hex color codes and descriptions that represent ${userInput} and provide the answer in json formatted like this example "[{"color": "#F3B289", "description": "A peachy-orange color that might remind you of the color of a beach sunset."}]"`;
 
   axios({
     method: 'post',
