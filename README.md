@@ -1,6 +1,6 @@
 # HexAI
 
-![](https://github.com/FEC-NSYNC/FEC/blob/main/FEC%20Demo%20Lg.gif)
+![](https://github.com/stephen-ho/HexAI/blob/main/HexAI%20SS.png)
 
 Project Description
 ----------------
