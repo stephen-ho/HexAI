@@ -127,6 +127,10 @@ button.button {
 
 @media screen and (max-width: 600px) {
 
+  .main {
+    max-height: none;
+  }
+
   h1 {
     margin: 20px;
   }
