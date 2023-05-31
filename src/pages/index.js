@@ -19,12 +19,12 @@ export default function Home() {
     {"color": "#FFCFAF", "description": "A light peach coral color that is commonly found on the Great Barrier Reef."}
   ];
 
-  const defaultCurrentColor = {"color": "#F3B289", "description": "A peachy-orange color that might remind you of the color of a beach sunset."};
+  // const defaultCurrentColor = {"color": "#F3B289", "description": "A peachy-orange color that might remind you of the color of a beach sunset."};
 
   const [ colors, setColors ] = useState(defaultColors);
   const [ isLoading, setIsLoading ] = useState(false);
   const [ userDescription, setDescription ] = useState("corals of the Great Barrier Reef");
-  const [ currentColor, setCurrentColor ] = useState(defaultCurrentColor);
+  const [ currentColor, setCurrentColor ] = useState("");
 
   function handleChange(e) {
     setDescription(e.target.value);
@@ -123,7 +123,9 @@ export default function Home() {
     </div>
     : null;
 
-  const fontColor = `color: ${currentColor.color}`;
+  const fontColor = currentColor ? currentColor.color : "#B2B2B2";
+  const hexCode = currentColor ? currentColor.color : "#HEXCODE";
+  const colorDesc = currentColor ? currentColor.description : "Short description of color choice...";
 
   return (
     <>
@@ -154,8 +156,8 @@ export default function Home() {
             {colorWheel}
           </div>
           <div className="colorInfo">
-            <h2 style={{color: currentColor.color}}>{currentColor.color}</h2>
-            <b>{currentColor.description}</b>
+            <h2 style={{color: fontColor}}>{hexCode}</h2>
+            <b>{colorDesc}</b>
           </div>
         </div>
         {extras}
